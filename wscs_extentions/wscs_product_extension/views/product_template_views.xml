@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+     <!-- inherit product template form view -->
+     <record id="product_template_only_form_view_inherit_wscs_product_extension" model="ir.ui.view">
+          <field name="name">product.template.view.form.inherit.wscs.product.extension</field>
+          <field name="model">product.template</field>
+          <field name="inherit_id" ref="product.product_template_only_form_view"/>
+          <field name="arch" type="xml">
+               <xpath expr="//group[@name='group_general']" position="inside">
+                    <field name="product_status_id" options="{'no_create': True}" readonly="not suitable_product_status_ids"/>
+                    <field name="suitable_product_status_ids" invisible="True"/>
+                    <field name="hs_code" />
+               </xpath>
+
+               <xpath expr="//field[@name='categ_id']" position="after">
+                    <field name="customer_product_code" />
+               </xpath>
+
+               <xpath expr="//page[@name='inventory']/group[@name='packaging']" position="after">
+                    <group name="pallet_specification" colspan="4" string="Pallet Specification">
+                         <field colspan="2" name="product_palletspec_ids" nolabel="1">
+                              <tree editable="bottom">
+                                   <field name="name" />
+                                   <field name="cases_per_layer" />
+                                   <field name="layers_per_pallet" />
+                                   <field name="units" />
+                                   <field name="qty" />
+                                   <field name="product_uom_id" />
+                                   <field name="width" />
+                              </tree>
+                         </field>
+                    </group>
+               </xpath>
+
+               <xpath expr="//div[@name='standard_price_uom']" position="after">
+                    <label for="landed_cost" />
+                    <div name="landed_cost_uom">
+                         <field name="landed_cost" class="oe_inline" widget="monetary" />
+                         <span groups="uom.group_uom" >per
+                              <field name="uom_name" class="oe_inline"/>
+                         </span>
+                    </div>
+
+                    <label for="margin"/>
+                    <div>
+                         <field name="margin" class="oe_inline"/>
+                         <span class="o_form_label oe_inline">%</span>
+                    </div>
+               </xpath>
+          </field>
+     </record>
+
+     <record id="product_template_hs_code_inherit_wscs_product_extension" model="ir.ui.view">
+          <field name="name">product.template.form.hs_code.inherit.wscs.product.extension</field>
+          <field name="model">product.template</field>
+          <field name="inherit_id" ref="stock_delivery.product_template_hs_code"/>
+          <field name="arch" type="xml">
+               <xpath expr="//field[@name='hs_code']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+               </xpath>
+          </field>
+     </record>
+</odoo>

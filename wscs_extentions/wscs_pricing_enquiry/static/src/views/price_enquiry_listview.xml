@@ -1,0 +1,7 @@
+<templates>
+    <t t-name="wscs_pricing_enquiry.PriceEnquiryListView" t-inherit="web.ListRenderer" t-inherit-mode="primary">
+        <xpath expr="//div[hasclass('o_list_renderer')]" position="before">
+            <PriceEnquiryDashBoard />
+        </xpath>
+    </t>
+</templates>

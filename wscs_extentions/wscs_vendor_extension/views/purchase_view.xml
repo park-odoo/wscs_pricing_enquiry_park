@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<odoo>
+    <menuitem id="menu_vendor_in_config_purchase"
+        name="Vendor"
+        parent="purchase.menu_purchase_config"
+        sequence="50"/>
+
+    <menuitem id="menu_purchase_vendor_status"
+        action="purchase_vendor_status_action"
+        parent="wscs_vendor_extension.menu_vendor_in_config_purchase"
+        sequence="5"/>
+
+    <menuitem id="menu_purchase_gfsi_scheme"
+        action="purchase_gfsi_scheme_action"
+        parent="wscs_vendor_extension.menu_vendor_in_config_purchase"
+        sequence="10"/>
+
+    <menuitem id="menu_purchase_gfsi_grade"
+        action="purchase_gfsi_grade_action"
+        parent="wscs_vendor_extension.menu_vendor_in_config_purchase"
+        sequence="15"/>
+
+    <menuitem id="menu_purchase_gfsi_certification"
+        action="purchase_gfsi_certification_action"
+        parent="wscs_vendor_extension.menu_vendor_in_config_purchase"
+        sequence="20"/>
+</odoo>

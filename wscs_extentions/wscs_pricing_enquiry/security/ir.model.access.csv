@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_price_enquiry,access_price_enquiry,model_price_enquiry,base.group_user,1,1,1,1
+access_enquiry_status,access_enquiry_status,model_enquiry_status,base.group_user,1,1,1,1
+access_price_enquiry_order_line,access_price_enquiry_order_line,model_price_enquiry_order_line,base.group_user,1,1,1,1
+access_price_enquiry_vendor_line,access_price_enquiry_vendor_line,model_price_enquiry_vendor_line,base.group_user,1,1,1,1

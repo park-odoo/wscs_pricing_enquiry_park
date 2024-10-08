@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data noupdate="1">
+  <!-- mail subtype for sent state -->
+    <record id="mt_rfp_sent" model="mail.message.subtype">
+            <field name="name">RFP Sent</field>
+            <field name="default" eval="False"/>
+            <field name="res_model">pricing.enquiry</field>
+    </record>
+
+    <record id="price_enquiry_sequence_id" model="ir.sequence">
+      <field name="name">Price Enquiry</field>
+      <field name="code">price.enquiry</field>
+      <field name="prefix">PE</field>
+      <field name="padding">5</field>
+      <field name="number_next">1</field>
+    </record>
+  </data>
+</odoo>

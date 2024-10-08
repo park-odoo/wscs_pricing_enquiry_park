@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="purchase_gfsi_scheme_action" model="ir.actions.act_window">
+        <field name="name">GFSI Scheme</field>
+        <field name="res_model">gfsi.scheme</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="purchase_gfsi_scheme_view_tree" model="ir.ui.view">
+        <field name="name">purchase.vendor.status.view.tree</field>
+        <field name="model">gfsi.scheme</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    <record id="purchase_gfsi_scheme_view_form" model="ir.ui.view">
+        <field name="name">purchase.vendor.status.view.form</field>
+        <field name="model">gfsi.scheme</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="product_supplierinfo_tree_view_inherited_vendor_extension" model="ir.ui.view" >
+        <field name="name">product.supplierinfo.tree.view.inherited.vendor.extension</field>
+        <field name="model">product.supplierinfo</field>
+        <field name="inherit_id" ref="product.product_supplierinfo_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='min_qty']" position="before">
+                <field name="qty_per_case"/>
+                <field name="cases_per_container"/>
+            </xpath>
+            <xpath expr="//field[@name='price']" position="after">
+                <field name="price_per_1000"/>
+            </xpath>
+            <xpath expr="//field[@name='delay']" position="after">
+                <field name="incoterm_id"/>
+            </xpath>
+        </field>
+    </record>
+     <record id="product_supplierinfo_search_view_inherited_vendor_extension" model="ir.ui.view">
+        <field name="name">product.supplierinfo.search.view.inherited</field>
+        <field name="model">product.supplierinfo</field>
+        <field name="inherit_id" ref="product.product_supplierinfo_search_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='archived']" position="before">
+                <filter string="Active" name="active" domain="[('product_tmpl_id.product_status_id.sequence', '=', 4)]"/>
+                <filter string="Pricing" name="pricing" domain="[('product_tmpl_id.product_status_id.sequence', '=', 1)]"/>
+                <filter string="NPD" name="NPD" domain="[('product_tmpl_id.product_status_id.sequence', '=', 3)]"/>
+                <filter string="Dormant" name="dormant" domain="[('product_tmpl_id.product_status_id.sequence', '=', 2)]"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
